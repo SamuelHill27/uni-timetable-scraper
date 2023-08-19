@@ -63,19 +63,8 @@ def repeat_df(df, repeat_num):
 
     return df
 
-def main():
-    df = pd.read_csv('timetable.csv')
-
-    start_week = datetime.datetime(2023, 9, 18)
+def format(df, start_week, number_of_weeks):
     formatted_df = format_df(df, start_week)
-
-    number_of_weeks = 10
     long_formatted_df = repeat_df(formatted_df, number_of_weeks)
-
-    file = long_formatted_df.to_csv('formatted_timetable.csv')
-
     print('Formatting complete! ' + str(len(long_formatted_df)) + ' rows successfully formatted.')
-    return file
-
-if __name__ == '__main__':
-    main()
+    return long_formatted_df

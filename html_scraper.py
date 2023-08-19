@@ -42,18 +42,14 @@ def get_rows_list(tables_soup):
 
     return rows_list
 
-def main():
-    soup = get_html('timetable_page.html')
+def scrape(file_directory):
+    soup = get_html(file_directory)
     tables_soup = get_tables(soup)
 
     headers_list = get_headers_list(tables_soup)
     rows_list = get_rows_list(tables_soup)
 
     df = pd.DataFrame(data=rows_list, columns=headers_list)
-    file = df.to_csv('timetable.csv', index=False)
 
     print('Scrape complete! ' + str(len(df)) + ' rows successfully scraped.')
-    return file
-
-if __name__ == '__main__':
-    main()
+    return df
