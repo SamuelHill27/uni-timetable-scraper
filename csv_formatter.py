@@ -1,5 +1,4 @@
 import pandas as pd
-import datetime
 
 # convert days of the week to numbers where they will be incremented on to start week
 def set_date(old_date, new_date, monday_date):

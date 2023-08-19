@@ -72,7 +72,7 @@ def execute():
 
     df = scrape(directory)
     formatted_df = format(df, datetime.datetime.strptime(start_week_entry.get(), '%d/%m/%Y'), int(number_of_weeks_entry.get()))
-    formatted_df.to_csv('timetable2.csv')
+    formatted_df.to_csv('timetable.csv')
     lbl.config(text='Success!')
 
 ttk.Button(frame, text="Submit", command=execute).grid(row=5, column=0, padx=5, pady=5)
