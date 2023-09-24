@@ -12,7 +12,7 @@ directory = ''
 window = Tk()
 window.eval('tk::PlaceWindow . center')
 window.title("Python Scraper Form")
-window.geometry('400x200')
+window.geometry('500x250')
 
 frame = Frame(window)
 frame.pack(padx=20, pady=20)
@@ -20,10 +20,10 @@ frame.pack(padx=20, pady=20)
 lbl = Label(frame)
 lbl.grid(row=5, column=1, padx=5, pady=5)
 
-Label(frame, text="Start date of term:", font=("Arial", 10), justify=LEFT, anchor="w").grid(sticky=W, row=0, column=0)
-Label(frame, text="Format: 'dd/mm/yyyy', future", justify=LEFT, anchor="w").grid(sticky=W, row=1, column=0)
-Label(frame, text="Number of weeks in term:", font=("Arial", 10), justify=LEFT, anchor="w").grid(sticky=W, row=2, column=0)
-Label(frame, text="Format: integer, max 50", justify=LEFT, anchor="w").grid(sticky=W, row=3, column=0)
+Label(frame, text="Start date of term:", font=("Arial", 12), justify=LEFT, anchor="w").grid(sticky=W, row=0, column=0)
+Label(frame, text="Format: 'dd/mm/yyyy', future", font=("Arial", 10), justify=LEFT, anchor="w").grid(sticky=W, row=1, column=0)
+Label(frame, text="Number of weeks in term:", font=("Arial", 12), justify=LEFT, anchor="w").grid(sticky=W, row=2, column=0)
+Label(frame, text="Format: integer, max 50", font=("Arial", 10), justify=LEFT, anchor="w").grid(sticky=W, row=3, column=0)
 
 start_week_entry = Entry(frame)
 start_week_entry.grid(row=0, column=1, padx=5)
