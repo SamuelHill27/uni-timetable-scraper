@@ -8,12 +8,12 @@ def get_html(file_name):
     return soup
 
 def get_tables(soup):
-    tables = soup.find_all("table", {"class": "spreadsheet"})
+    tables = soup.find_all("table", {"border": "1"})
     tables_soup = BeautifulSoup(str(tables), 'html.parser')
     return tables_soup
 
 def get_headers_list(tables_soup):
-    headers_rset = tables_soup.find('tr', {"class": "columnTitles"})
+    headers_rset = tables_soup.find('tr')
 
     headers_list = []
     for h in headers_rset:
@@ -29,7 +29,7 @@ def validate_field(field):
     return field.text
 
 def get_rows_list(tables_soup):
-    rows_rset = tables_soup.find_all('tr', {"class": None})
+    rows_rset = tables_soup.find_all('tr')
     
     rows_list = []
     for row in rows_rset:
@@ -38,7 +38,10 @@ def get_rows_list(tables_soup):
             if field.text == '\n':
                 continue
             fields_list.append(validate_field(field))
-        rows_list.append(fields_list)
+            
+        # doesn't add header row
+        if fields_list[0] != "Activity":
+            rows_list.append(fields_list)
 
     return rows_list
 
