@@ -1,1 +1,0 @@
-This text file is used to test git rebasing as compared with merging
