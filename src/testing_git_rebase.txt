@@ -1,3 +1,2 @@
 This file has been added to test rebasing in comparison to merging
-this file was changed again
-this file was changed by main
+this file was changed again again
